@@ -1,0 +1,79 @@
+# LiteLLM Proxy Configuration for Local Models (LM Studio + Ollama)
+# This config routes requests to LM Studio and Ollama running on your MacBook Pro
+
+model_list:
+  # LM STUDIO MODELS
+  # These connect to LM Studio running at localhost:1234 on your Mac
+  
+  - model_name: "lm-studio-default"
+    litellm_params:
+      model: "lm_studio/default-model"  # Replace "default-model" with your actual LM Studio model name
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: completion
+      
+  - model_name: "lm-studio-chat"
+    litellm_params:
+      model: "lm_studio/default-model"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  # OLLAMA MODELS
+  # These connect to Ollama running at localhost:11434 on your Mac
+  
+  - model_name: "ollama-llama2"
+    litellm_params:
+      model: "ollama/llama2"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-llama3"
+    litellm_params:
+      model: "ollama/llama3"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-mistral"
+    litellm_params:
+      model: "ollama/mistral"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-neural-chat"
+    litellm_params:
+      model: "ollama/neural-chat"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  # Catch-all for any model on Ollama
+  - model_name: "ollama-*"
+    litellm_params:
+      model: "ollama/*"
+      api_base: "http://host.docker.internal:11434"
+
+  # Catch-all for any model on LM Studio
+  - model_name: "lm-studio-*"
+    litellm_params:
+      model: "lm_studio/*"
+      api_base: "http://host.docker.internal:1234/v1"
+
+# Optional: Add authentication
+router_settings:
+  # Uncomment to enable key-based authentication
+  # key_management_system: "mock"
+  # master_key: "sk-litellm-master-key"
+  
+  # Track usage and costs
+  enable_logging: true
+  
+  # Health check settings
+  health_check_interval: 60
+
+# Optional: Configure fallback behavior
+  # If you want automatic fallback between models
+  # num_retries: 3
