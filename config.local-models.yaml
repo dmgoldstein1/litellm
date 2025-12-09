@@ -4,48 +4,175 @@
 model_list:
   # LM STUDIO MODELS
   # These connect to LM Studio running at localhost:1234 on your Mac
-  
-  - model_name: "lm-studio-default"
+
+  - model_name: "lm-studio-llama-3.2-1b-instruct"
     litellm_params:
-      model: "lm_studio/default-model"  # Replace "default-model" with your actual LM Studio model name
-      api_base: "http://host.docker.internal:1234/v1"
-    model_info:
-      mode: completion
-      
-  - model_name: "lm-studio-chat"
-    litellm_params:
-      model: "lm_studio/default-model"
+      model: "lm_studio/llama-3.2-1b-instruct"
       api_base: "http://host.docker.internal:1234/v1"
     model_info:
       mode: chat
+
+  - model_name: "lm-studio-qwen2.5-0.5b-instruct-mlx"
+    litellm_params:
+      model: "lm_studio/qwen2.5-0.5b-instruct-mlx"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-qwen3-vl-30b"
+    litellm_params:
+      model: "lm_studio/qwen3-vl-30b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-seed-oss-36b"
+    litellm_params:
+      model: "lm_studio/seed-oss-36b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-gpt-oss-20b"
+    litellm_params:
+      model: "lm_studio/gpt-oss-20b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-granite-3.1-8b"
+    litellm_params:
+      model: "lm_studio/granite-3.1-8b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-qwen3-vl-8b"
+    litellm_params:
+      model: "lm_studio/qwen3-vl-8b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-qwen3-coder-30b"
+    litellm_params:
+      model: "lm_studio/qwen3-coder-30b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-qwen3-next-80b"
+    litellm_params:
+      model: "lm_studio/qwen3-next-80b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-granite-4-h-tiny"
+    litellm_params:
+      model: "lm_studio/granite-4-h-tiny"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-ministral-3-14b-reasoning"
+    litellm_params:
+      model: "lm_studio/ministral-3-14b-reasoning"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-olmo-3-32b-think"
+    litellm_params:
+      model: "lm_studio/olmo-3-32b-think"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-magistral-small-2509"
+    litellm_params:
+      model: "lm_studio/magistral-small-2509"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  - model_name: "lm-studio-olmocr-2-7b"
+    litellm_params:
+      model: "lm_studio/olmocr-2-7b"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: chat
+
+  # Embedding model example
+  - model_name: "lm-studio-nomic-embed-text-v1.5"
+    litellm_params:
+      model: "lm_studio/nomic-embed-text-v1.5"
+      api_base: "http://host.docker.internal:1234/v1"
+    model_info:
+      mode: embedding
 
   # OLLAMA MODELS
   # These connect to Ollama running at localhost:11434 on your Mac
   
-  - model_name: "ollama-llama2"
+  - model_name: "ollama-deepseek-r1-70b"
     litellm_params:
-      model: "ollama/llama2"
+      model: "ollama/deepseek-r1:70b"
       api_base: "http://host.docker.internal:11434"
     model_info:
       mode: chat
 
-  - model_name: "ollama-llama3"
+  - model_name: "ollama-qwen3-coder-30b"
     litellm_params:
-      model: "ollama/llama3"
+      model: "ollama/qwen3-coder:30b"
       api_base: "http://host.docker.internal:11434"
     model_info:
       mode: chat
 
-  - model_name: "ollama-mistral"
+  - model_name: "ollama-deepseek-coder-v2-16b-lite"
     litellm_params:
-      model: "ollama/mistral"
+      model: "ollama/deepseek-coder-v2:16b-lite-instruct-q5_K_M"
       api_base: "http://host.docker.internal:11434"
     model_info:
       mode: chat
 
-  - model_name: "ollama-neural-chat"
+  - model_name: "ollama-gemma3-27b"
     litellm_params:
-      model: "ollama/neural-chat"
+      model: "ollama/gemma3:27b"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-granite3.3-8b"
+    litellm_params:
+      model: "ollama/granite3.3:8b"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-qwen3-32b"
+    litellm_params:
+      model: "ollama/qwen3:32b"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-granite3.2-vision"
+    litellm_params:
+      model: "ollama/granite3.2-vision:latest"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-llama3.1-8b"
+    litellm_params:
+      model: "ollama/llama3.1:8b"
+      api_base: "http://host.docker.internal:11434"
+    model_info:
+      mode: chat
+
+  - model_name: "ollama-deepseek-coder-v2-16b"
+    litellm_params:
+      model: "ollama/deepseek-coder-v2:16b"
       api_base: "http://host.docker.internal:11434"
     model_info:
       mode: chat
@@ -76,4 +203,4 @@ router_settings:
 
 # Optional: Configure fallback behavior
   # If you want automatic fallback between models
-  # num_retries: 3
+  num_retries: 3

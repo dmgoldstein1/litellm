@@ -1,0 +1,10 @@
+[9]{name,id,size,modified}:
+  "deepseek-r1:70b",d37b54d01a76,42 GB,3 days ago
+  "qwen3-coder:30b",ad67f85ca250,18 GB,3 months ago
+  "deepseek-coder-v2:16b-lite-instruct-q5_K_M",6065d4880bf9,11 GB,3 months ago
+  "gemma3:27b",a418f5838eaf,17 GB,3 months ago
+  "granite3.3:8b",fd429f23b909,4.9 GB,3 months ago
+  "qwen3:32b",030ee887880f,20 GB,3 months ago
+  "granite3.2-vision:latest",3be41a661804,2.4 GB,3 months ago
+  "llama3.1:8b",46e0c10c039e,4.9 GB,4 months ago
+  "deepseek-coder-v2:16b",63fb193b3a9b,8.9 GB,5 months ago
